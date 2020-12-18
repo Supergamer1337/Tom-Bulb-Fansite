@@ -59,21 +59,28 @@ nav {
 }
 
 .navlinks {
-    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navlinks > a {
-    font-size: 2.8em;
-    color: #e7e7e7;
+    color: #dbdbdb;
     text-decoration: none;
-    padding: 0.4em;
 
-    font-family: 'Harry Potter Regular';
-    letter-spacing: 0.01em;
+    margin: 0.8em;
 }
 
-.navlinks > a:hover {
-    text-decoration: underline;
+.nav-text > span {
+    font-family: 'Harry Potter Regular';
+    font-size: 2.8em;
+}
+
+.nav-text:hover {
+    letter-spacing: 0.4em;
+}
+
+.nav-text:nth-child(2n+1) {
+    color: red;
 }
 
 article {
