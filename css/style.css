@@ -27,7 +27,7 @@ body {
 
 header {
     background: #13324d;
-    padding: 1.5em 2em;
+    padding: 2.5em 2em 1.5em 2em;
     position: relative;
 }
 
@@ -37,6 +37,7 @@ nav {
 }
 
 .header-title > a {
+    position: relative;
     color: #fcba03;
     font-size: 3.6em;
     text-decoration: none;
@@ -44,6 +45,17 @@ nav {
 
     font-family: 'Harry Potter Regular';
     letter-spacing: 0.025em;
+}
+
+.header-hat {
+    position: absolute;
+    width: 3em;
+    z-index: 1;
+
+    left: 1.2em;
+    top: 0.3em;
+
+    transform: rotate(-30deg);
 }
 
 .navlinks {
