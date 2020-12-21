@@ -1,3 +1,15 @@
+/* Custom Variables */
+:root {
+    --main-bg-color: #1F1F1F;
+    --secondary-bg-color: #13324d;
+    --primary-accent: #fcba03;
+    --secondary-accent: #e4a700;
+    --standard-font-color: #dbdbdb;
+}
+
+
+/* Global */
+
 @font-face {
     font-family: 'Harry Potter Regular';
     src: url('../fonts/hpp.ttf');
@@ -10,6 +22,10 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background-image: url("../images/hogwarts-background.jpg");
     background-size: cover;
@@ -20,25 +36,22 @@ body {
     position: relative;
     width: 70%;
     margin: auto;
-    min-height: 100vh;
-
-    background: #1F1F1F;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: var(--main-bg-color);
 }
 
+/* Header / Nav */
 header {
-    background: #13324d;
+    background: var(--secondary-bg-color);
     padding: 2.5em 2em 1.5em 2em;
     position: relative;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-title > a {
+.header-title a {
     position: relative;
-    color: #fcba03;
+    color: var(--primary-accent);
     font-size: 3.6em;
     text-decoration: none;
     cursor: pointer;
@@ -63,28 +76,44 @@ nav {
     justify-content: space-between;
 }
 
-.navlinks > a {
-    color: #dbdbdb;
+.navlinks a {
+    color: var(--standard-font-color);
     text-decoration: none;
 
     margin: 0.8em;
 }
 
-.nav-text > span {
+.nav-text span {
     font-family: 'Harry Potter Regular';
     font-size: 2.8em;
+
+    display: inline-block;
 }
 
 .nav-text:hover {
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
 }
 
-.nav-text:nth-child(2n+1) {
-    color: red;
+.nav-text:hover, .nav-text {
+    transition: letter-spacing 0.25s ease-in-out;
 }
+
+.nav-text:hover span:nth-child(even) {
+    transform: translateY(-0.4em);
+}
+
+.nav-text:hover span:nth-child(odd) {
+    transform: translateY(0.4em);
+}
+
+span {
+    transition: transform 0.25s ease-in-out;
+}
+
+/* Main body / article */
 
 article {
-    color: #dbdbdb;
+    color: var(--standard-font-color);
     padding: 2em 2em;
 }
 
@@ -93,34 +122,36 @@ article {
     font-weight: 700;
 }
 
+.sub-article-title {
+    font-size: 3em;
+    color: var(--secondary-accent);
+    border-bottom: var(--secondary-accent) 1px solid;
+}
+
 p {
     font-size: 2.8em;
     margin: 0.2em 0;
 }
 
+/* Footer */
 footer {
-    background-color: #13324d;
-    color: #dbdbdb;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
+    background-color: var(--secondary-bg-color);
+    color: var(--standard-font-color);
     padding: 1em 2em;
-
-    display: flex;
-    justify-content: space-between;
+    grid-row-start: 3;
+    grid-row-end: 4;
 }
 
-footer > div > h2 {
-    color: #fcba03;
+footer h2 {
+    color: var(--primary-accent);
     font-size: 2.4em;
 }
 
-footer > div > p {
+footer p {
     font-size: 2em;
 }
 
-footer > div {
+footer div {
     margin: 0.4em;
 }
 
@@ -129,4 +160,19 @@ span.copyright {
     font-size: 1em;
     padding: 0;
     margin: 0;
+}
+
+/* Multi-use / repeatable */
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accent-1 {
+    color: var(--primary-accent);
+}
+
+.accent-2 {
+    color: var(--secondary-accent)
 }
