@@ -13,7 +13,7 @@
 @font-face {
     font-family: 'Harry Potter Regular';
     src: url('../fonts/hpp.ttf');
-    }
+}
 
 * {
     font-family: "Tangerine", cursive;
@@ -28,19 +28,25 @@ html {
 
 body {
     background-image: url("../images/hogwarts-background.jpg");
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container  {
+    display: grid;
+    grid-template-rows: 9em auto 15.2em;
+
     position: relative;
     width: 70%;
     margin: auto;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: 1fr auto;
     background-color: var(--main-bg-color);
+    min-height: 100vh;
 }
+
+#main {
+    overflow:auto;
+	padding-bottom: 180px;}
 
 /* Header / Nav */
 header {
@@ -90,7 +96,7 @@ header {
     display: inline-block;
 }
 
-.nav-text:hover {
+.nav-text:hover, .active {
     letter-spacing: 0.2em;
 }
 
@@ -98,11 +104,11 @@ header {
     transition: letter-spacing 0.25s ease-in-out;
 }
 
-.nav-text:hover span:nth-child(even) {
+.nav-text:hover span:nth-child(even), .active span:nth-child(even) {
     transform: translateY(-0.4em);
 }
 
-.nav-text:hover span:nth-child(odd) {
+.nav-text:hover span:nth-child(odd), .active span:nth-child(odd) {
     transform: translateY(0.4em);
 }
 
@@ -128,9 +134,23 @@ article {
     border-bottom: var(--secondary-accent) 1px solid;
 }
 
+.text-with-picture img {
+    width: 20em;
+    height: 20em;
+    margin: 0 0 2em 2em;
+    float: right;
+
+    border: double #dbdbdb thick;
+}
+
+p, p > span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 p {
-    font-size: 2.8em;
-    margin: 0.2em 0;
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    text-align: justify;
 }
 
 /* Footer */
@@ -138,8 +158,6 @@ footer {
     background-color: var(--secondary-bg-color);
     color: var(--standard-font-color);
     padding: 1em 2em;
-    grid-row-start: 3;
-    grid-row-end: 4;
 }
 
 footer h2 {
@@ -148,6 +166,7 @@ footer h2 {
 }
 
 footer p {
+    font-family: 'Tangerine', cursive;
     font-size: 2em;
 }
 
