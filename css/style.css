@@ -35,7 +35,7 @@ body {
 
 .container  {
     display: grid;
-    grid-template-rows: 9em auto 15.2em;
+    grid-template-rows: 8.5em auto 15.2em;
 
     position: relative;
     width: 70%;
@@ -126,12 +126,16 @@ article {
 .article-title {
     font-size: 4em;
     font-weight: 700;
+
+    color: var(--secondary-accent);
+    border-bottom: var(--secondary-accent) solid 0.04em;
 }
 
 .sub-article-title {
+    margin-top: 0.5em;
     font-size: 3em;
     color: var(--secondary-accent);
-    border-bottom: var(--secondary-accent) 1px solid;
+    border-bottom: var(--secondary-accent) 0.01em solid;
 }
 
 .text-with-picture img {
@@ -140,7 +144,7 @@ article {
     margin: 0 0 2em 2em;
     float: right;
 
-    border: double #dbdbdb thick;
+    border: double var(--standard-font-color) 0.2em;
 }
 
 p, p > span {
@@ -194,4 +198,12 @@ span.copyright {
 
 .accent-2 {
     color: var(--secondary-accent)
+}
+
+.no-top {
+    margin-top: 0;
+}
+
+.no-bottom {
+    margin-bottom: 0;
 }
