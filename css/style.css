@@ -252,14 +252,18 @@ span.copyright {
 }
 
 /* Phone site */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     nav {
         align-items: center;
     }
 
+    .header-title {
+        position: relative;
+    }
+
     .header-hat {
-        left: 1.6em;
-        top: 0.5em;
+        top: -2em;
+        left: -1em;
     }
 
     .article-title {
