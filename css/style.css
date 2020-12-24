@@ -35,7 +35,7 @@ body {
 
 .container  {
     display: grid;
-    grid-template-rows: 8.5em auto 15.2em;
+    grid-template-rows: max-content auto max-content;
 
     position: relative;
     width: 70%;
@@ -208,4 +208,78 @@ span.copyright {
 
 .no-bottom {
     margin-bottom: 0;
+}
+
+/* Responsive design */
+
+@media only screen and (max-width: 1500px) {
+    .container {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navlinks {
+        justify-content: start;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .navlinks {
+        flex-direction: column;
+    }
+
+    footer .flex {
+        flex-direction: column;
+    }
+
+    .text-with-picture img {
+        display: block;
+        float: none;
+        margin: 1em auto 1em auto;
+    }
+}
+
+/* Phone site */
+@media only screen and (max-width: 400px) {
+    nav {
+        align-items: center;
+    }
+
+    .header-hat {
+        left: 1.6em;
+        top: 0.5em;
+    }
+
+    .article-title {
+        font-size: 2.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .nav-text:hover, .active {
+        border-bottom: var(--standard-font-color) 0.1em solid;
+        letter-spacing: initial;
+    }
+    
+    .nav-text:hover span:nth-child(even), .active span:nth-child(even) {
+        transform: initial;
+    }
+    
+    .nav-text:hover span:nth-child(odd), .active span:nth-child(odd) {
+        transform: initial;
+    }
 }
