@@ -159,6 +159,10 @@ p {
     text-align: justify;
 }
 
+p.boldend {
+    font-weight: 700;
+}
+
 /* Footer */
 footer {
     background-color: var(--secondary-bg-color);
