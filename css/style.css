@@ -159,8 +159,16 @@ p {
     text-align: justify;
 }
 
-p.boldend {
+.boldend {
     font-weight: 700;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.strike {
+    text-decoration: line-through;
 }
 
 /* Footer */
@@ -261,23 +269,6 @@ span.copyright {
         align-items: center;
     }
 
-    .header-title {
-        position: relative;
-    }
-
-    .header-hat {
-        top: -2em;
-        left: -1em;
-    }
-
-    .article-title {
-        font-size: 2.8em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
     .nav-text:hover, .active {
         border-bottom: var(--standard-font-color) 0.1em solid;
         letter-spacing: initial;
@@ -289,5 +280,30 @@ span.copyright {
     
     .nav-text:hover span:nth-child(odd), .active span:nth-child(odd) {
         transform: initial;
+    }
+
+    .header-title {
+        position: relative;
+    }
+
+    .header-hat {
+        top: -2em;
+        left: -1em;
+    }
+
+    article {
+        padding: 2em 1em;
+    }
+
+    .article-title {
+        font-size: 2.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 1em;
     }
 }
