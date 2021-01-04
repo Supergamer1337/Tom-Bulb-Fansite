@@ -1,10 +1,10 @@
 /* Custom Variables */
 :root {
-    --main-bg-color: #1F1F1F;
-    --secondary-bg-color: #13324d;
-    --primary-accent: #fcba03;
-    --secondary-accent: #e4a700;
-    --standard-font-color: #dbdbdb;
+    --main-bg-color: #1F1F1F; /* --main-bg-color: #ffffff; light */ 
+    --secondary-bg-color: #13324d; /* --secondary-bg-color: #056F92; light */ 
+    --primary-accent: #fcba03; /* --primary-accent: #ffbb00; light */ 
+    --secondary-accent: #e4a700; /* --secondary-accent: #dba800; light */ 
+    --standard-font-color: #dbdbdb; /* --standard-font-color: #000000; light */ 
 }
 
 
@@ -199,6 +199,43 @@ span.copyright {
     margin: 0;
 }
 
+/* Theme switcher */
+.desktop-switch {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    background: var(--secondary-bg-color);
+    border: black solid 0.2em;
+}
+
+.desktop-switch:hover {
+    cursor: pointer;
+}
+
+.desktop-switch:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.mobile-switch {
+    display: none;
+}
+
+.sun {
+    width: 4em;
+    height: 4em;
+
+    fill: gold;
+    transform: translate(0.02em, 0.15em);
+}
+
+.moon {
+    width: 4em;
+    height: 4em;
+
+    transform: translate(-0.2em, 0.3em) rotate(-30deg);
+}
+
 /* Multi-use / repeatable */
 
 .flex {
@@ -233,6 +270,10 @@ span.copyright {
 @media only screen and (max-width: 1200px) {
     .container {
         width: 100%;
+    }
+
+    .desktop-switch {
+        display: none;
     }
 }
 
