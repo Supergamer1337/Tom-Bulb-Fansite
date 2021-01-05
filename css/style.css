@@ -82,6 +82,13 @@ header {
     justify-content: space-between;
 }
 
+.showBtn {
+    display: none;
+    font-family: 'Harry Potter Regular';
+    color: var(--standard-font-color);
+    font-size: 3em;
+}
+
 .navlinks a {
     color: var(--standard-font-color);
     text-decoration: none;
@@ -114,6 +121,42 @@ header {
 
 span {
     transition: transform 0.25s ease-in-out;
+}
+
+/* Theme switcher */
+.switchTheme {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    background: var(--secondary-bg-color);
+    border: black solid 0.2em;
+
+    transition: transform .2s ease-in-out;
+}
+
+.switchTheme:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.switchTheme:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.sun {
+    width: 4em;
+    height: 4em;
+
+    fill: gold;
+    transform: translate(0.02em, 0.15em);
+}
+
+.moon {
+    width: 4em;
+    height: 4em;
+
+    transform: translate(-0.2em, 0.3em) rotate(-30deg);
 }
 
 /* Main body / article */
@@ -199,43 +242,6 @@ span.copyright {
     margin: 0;
 }
 
-/* Theme switcher */
-.desktop-switch {
-    position: fixed;
-    right: 1em;
-    bottom: 1em;
-    background: var(--secondary-bg-color);
-    border: black solid 0.2em;
-}
-
-.desktop-switch:hover {
-    cursor: pointer;
-}
-
-.desktop-switch:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.mobile-switch {
-    display: none;
-}
-
-.sun {
-    width: 4em;
-    height: 4em;
-
-    fill: gold;
-    transform: translate(0.02em, 0.15em);
-}
-
-.moon {
-    width: 4em;
-    height: 4em;
-
-    transform: translate(-0.2em, 0.3em) rotate(-30deg);
-}
-
 /* Multi-use / repeatable */
 
 .flex {
@@ -259,6 +265,11 @@ span.copyright {
     margin-bottom: 0;
 }
 
+.hidden {
+    height: 0;
+    overflow: hidden;
+}
+
 /* Responsive design */
 
 @media only screen and (max-width: 1500px) {
@@ -272,12 +283,22 @@ span.copyright {
         width: 100%;
     }
 
-    .desktop-switch {
-        display: none;
+    .switchTheme {
+        all: initial;
+
+        transition: transform .2s ease-in-out;
+    }
+
+    .sun {
+        transform: initial;
+    }
+
+    .moon {
+        transform: rotate(-30deg);
     }
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 950px) {
     nav {
         display: flex;
         flex-direction: column;
@@ -308,6 +329,15 @@ span.copyright {
 @media only screen and (max-width: 500px) {
     nav {
         align-items: center;
+    }
+
+    .navlinks {
+        align-items: center;
+    }
+
+    .showBtn {
+        display: block;
+        cursor: pointer;
     }
 
     .nav-text:hover, .active {
