@@ -31,8 +31,6 @@ function themeSwitchOnClick() {
         currentTheme = 'light';
         localStorage.setItem('theme', 'light');
     } else {
-
-        console.log('ran')
         // Set to dark properties
         root.style.setProperty('--main-bg-color', '#1F1F1F');
         root.style.setProperty('--secondary-bg-color', '#13324d');
