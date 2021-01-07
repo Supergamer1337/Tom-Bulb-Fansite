@@ -1,24 +1,31 @@
 // Declare objects
 let btn = document.querySelector('.showBtn');
 let nav = document.querySelector('.navlinks');
+let menu;
 
-window.addEventListener("resize", function() {
-    if (window.innerWidth > 500) {
-        nav.classList.remove('hidden');
-        btn.innerHTML = 'Hide'
-    }
-    if (window.innerWidth <= 500) {
+if (localStorage.getItem('menu') == null) {
+    localStorage.setItem('menu', 'closed');
+} else {
+    localStorage.getItem('menu');
+    setNav();
+}
+
+function setNav() {
+    if(localStorage.getItem('menu') == 'closed') {
         nav.classList.add('hidden');
-        btn.innerHTML = 'Show'
-    }
-});
-
-function changeNav() {
-    if(!nav.classList.contains('hidden')) {
-        nav.classList.toggle('hidden');
         btn.innerHTML = 'Show';
     } else {
-        nav.classList.toggle('hidden');
+        nav.classList.remove('hidden');
         btn.innerHTML = 'Hide';
+    }
+}
+
+function changeNav() {
+    if(localStorage.getItem('menu') == 'closed') {
+        localStorage.setItem('menu', 'open');
+        setNav();
+    } else {
+        localStorage.setItem('menu', 'closed');
+        setNav();
     }
 }
