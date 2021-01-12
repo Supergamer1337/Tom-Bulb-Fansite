@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    background-image: url("../images/hogwarts-background.jpg");
+    background-image: url("../images/hogwarts-background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
